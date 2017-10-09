@@ -19,14 +19,16 @@ class ConcertDetail extends Component {
             .then(result=>result.json())
             .then(items=>this.setState({data: items}), function(){
                 this.render();
-                
+
             });
     }
 
     render() {
         return (
             <div className="bgColor">
-                Konzertdaten für {this.props.match.params.name}<br/>
+                <br/>
+                <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
+                <h3>Konzertdaten für {this.props.match.params.name}</h3>
                 {this.state.data !== undefined ? this.state.data._embedded.events.map((concert) =>
                 
                 <p>{concert.name} - {concert.dates.start.localDate}<br/>
@@ -34,7 +36,6 @@ class ConcertDetail extends Component {
                 </p>
 
                 ) : ''}
-                <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
                 </div>
 
 

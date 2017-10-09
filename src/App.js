@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo_signet_300dpi_RGB.png';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FacebookStart from './FacebookStart.js';
