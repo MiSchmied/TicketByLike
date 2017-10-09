@@ -38,21 +38,7 @@ class ConcertDetail extends Component {
 
                 ) : <NoTickets></NoTickets>}
 
-                {/* <br/>
-                <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
-                <h3>Konzertdaten für {this.props.match.params.name}</h3>
-
-                if (this.state.data !== undefined) { 
-                    this.state.data._embedded.events.map((concert) =>
-                <p>{concert.name} - {concert.dates.start.localDate}<br/>
-                <img src={concert.images[0].url} />
-                </p>
-                )
-                } else {
-                    window.location = './NoTickets.js'
-                } */}
-
-                </div>
+            </div>
 
 
         )
