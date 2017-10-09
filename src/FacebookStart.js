@@ -44,7 +44,6 @@ class FacebookStart extends React.Component {
                 ) : (
                     <FacebookData authtoken={this.authtoken} />
                 )}
-                Sie sind {this.state.isLoggedIn ? 'angemeldet' : 'abgemeldet'}
             </div>
         )
     };

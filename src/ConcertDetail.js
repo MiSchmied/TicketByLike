@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './MusicInterest.css';
+import NoTickets from './NoTickets.js'
 
 class ConcertDetail extends Component {
     constructor(props) 
@@ -29,13 +30,28 @@ class ConcertDetail extends Component {
                 <br/>
                 <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
                 <h3>Konzertdaten für {this.props.match.params.name}</h3>
-                {this.state.data !== undefined ? this.state.data._embedded.events.map((concert) =>
+                {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert) =>
                 
                 <p>{concert.name} - {concert.dates.start.localDate}<br/>
                 <img src={concert.images[0].url} />
                 </p>
 
-                ) : ''}
+                ) : <NoTickets></NoTickets>}
+
+                {/* <br/>
+                <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
+                <h3>Konzertdaten für {this.props.match.params.name}</h3>
+
+                if (this.state.data !== undefined) { 
+                    this.state.data._embedded.events.map((concert) =>
+                <p>{concert.name} - {concert.dates.start.localDate}<br/>
+                <img src={concert.images[0].url} />
+                </p>
+                )
+                } else {
+                    window.location = './NoTickets.js'
+                } */}
+
                 </div>
 
 

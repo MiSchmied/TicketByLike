@@ -15,6 +15,7 @@ class MusicInterest extends Component {
     render() {
         return (
         <div className="bgColor">
+            <br/>
             <Grid>
                 <Row className="marginTop">
                     {this.props.data.map((music) =>
