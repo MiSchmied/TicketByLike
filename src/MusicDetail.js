@@ -18,4 +18,5 @@ class MusicDetail extends Component {
     }
 }
 
+
 export default withRouter(MusicDetail)
