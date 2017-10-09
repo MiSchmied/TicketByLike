@@ -16,8 +16,7 @@ class FacebookComponent extends Component {
     render(){
         return (
             <div>
-            <FacebookLogin socialId="303059573504837"
-            // <FacebookLogin socialId="116656659050875"
+                <FacebookLogin socialId="303059573504837"
             language="de_DE"
             scope="public_profile,email,user_actions.music,user_likes"
             responseHandler={FacebookComponent.responseFacebook.bind(this)}

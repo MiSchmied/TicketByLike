@@ -27,13 +27,13 @@ class ConcertDetail extends Component {
         return (
             <div className="bgColor">
                 Konzertdaten für {this.props.match.params.name}<br/>
-                {this.state.data !== undefined ? this.state.data._embedded.events.map((concert) =>
+                {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert) =>
                 
                 <p>{concert.name} - {concert.dates.start.localDate}<br/>
                 <img src={concert.images[0].url} />
                 </p>
 
-                ) : ''}
+                ) : <p>Keine Konzertdaten gefunden</p>}
                 <button onClick={() => {this.props.history.push('/overview')}}>Zur Übersicht</button>
                 </div>
 
