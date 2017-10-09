@@ -1,0 +1,14 @@
+.test{
+    margin-bottom: 15px;
+}
+
+.marginTop{
+    margin-top: 15px;
+}
+
+.bgColor{
+    background: #222;
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: medium;
+}
