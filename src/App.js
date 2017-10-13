@@ -5,7 +5,7 @@ import { Route} from 'react-router-dom';
 import FacebookStart from './FacebookStart.js';
 import ConcertDetail from './ConcertDetail.js';
 
-
+import './ticketmaster.min.css';
 class App extends Component {
   render() {
     return (
@@ -13,9 +13,10 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Welcome to <strong>Ticket By Like</strong></h1>
+          
         </div>
 
-        
+
         <switch>
           <Route exact path='/' component={FacebookStart}/>
           <Route path='/overview' component={FacebookStart}/>
