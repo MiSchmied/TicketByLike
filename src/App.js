@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo_signet_300dpi_RGB.png';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import FacebookStart from './FacebookStart.js';
 import ConcertDetail from './ConcertDetail.js';
-import { Button } from 'react-bootstrap';
 
 
 class App extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import graph from 'fb-react-sdk';
 import MusicInterest from './MusicInterest.js';
-import {withRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class FacebookData extends Component {
 

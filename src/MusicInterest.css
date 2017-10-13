@@ -12,3 +12,16 @@
     font-weight: bold;
     font-size: medium;
 }
+
+.concertImages {
+    width: 512px;
+    height: 288px;
+}
+
+/*
+- Sitzplankarte -> Check
+- Vorverkaufsstellen 
+- Integration GMAPS (Anzeige Venue)
+- Verkaufspreise -> Check
+- Weiterleitung auf die Ticketmasterseite -> Check
+ */

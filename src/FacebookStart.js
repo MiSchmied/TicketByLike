@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import FacebookComponent from './FacebookComponent.js'
 import FacebookData from './FacebookData.js'
 
-class FacebookStart extends React.Component {
-    // render() {
-    //     return (
-    //         <FacebookComponent />
-    //     )
-    // }
-
+class FacebookStart extends Component {
     constructor (props)
     {
         super(props);

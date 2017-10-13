@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import MusicDetail from './MusicDetail.js';
-import ConcertDetail from './ConcertDetail.js';
-import {withRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import FacebookData from './FacebookData.js';
+import {withRouter} from 'react-router-dom';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';

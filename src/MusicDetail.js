@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import graph from 'fb-react-sdk';
-import {withRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class MusicDetail extends Component {
 

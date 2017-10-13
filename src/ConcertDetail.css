@@ -1,0 +1,13 @@
+.row{
+    margin-bottom: 30px;
+}
+
+h3,
+h4,
+span{
+    color: #fff !important;
+}
+
+.karteAbstandOben {
+    margin-top: 80px;
+}
