@@ -11,3 +11,25 @@ span{
 .karteAbstandOben {
     margin-top: 80px;
 }
+
+.lightgrey {
+    color: lightgrey !important;
+    font-size: 50px;
+}
+
+.red {
+    color: red !important;
+    font-size: 50px;
+}
+
+.wrapper {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+.wrapper .glyphicon {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+ }

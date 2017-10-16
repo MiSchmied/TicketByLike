@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import NoTickets from './NoTickets.js';
-import { Button } from 'react-bootstrap';
+import { Button, Glyphicon } from 'react-bootstrap';
 import GoogleMap from './GoogleMap.js';
 import './ConcertDetail.css';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+
 
 class ConcertDetail extends Component {
 
@@ -30,35 +31,55 @@ class ConcertDetail extends Component {
 
             });
     }
+changeColor(concert, that) {
+    concert.setState({},()=>{
+        concert.render();
+    });
+    console.log('clicked')
+
+    this.selected = !this.selected;
+}
+    
     render() {
+
+        
+
         return (
             <div>
                 <br />
                 <button onClick={() => { this.props.history.push('/overview') }}>Zur Übersicht</button>
                 <h3>Konzertdaten für {this.props.match.params.name}</h3>
-
-                {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert, i) =>
-                    <Row key={i}>
-                        <Col lg={6}>
-                            <h4>{concert.name} | {concert.dates.start.localDate}</h4><br />
-                            {concert.priceRanges ? concert.priceRanges.map((price, j) =>
-                                <span key={j}>Preisspanne: {price.min}{price.currency} - {price.max}{price.currency}</span>) : ''
-                            } <br />
-                            <a href={concert.url}>
-                                <img className="concertImages" src={concert.images[0].url} /><br />
-                                <Button bsStyle="primary">Link zum Konzert</Button>
-                            </a>
-                        </Col>
-                        {concert._embedded.venues.map((loc, k) =>
-                            <Col className="karteAbstandOben" lg={6} key={k} >
-                                {loc.location.longitude !== '0' && loc.location.latitude !== '0' ?
-                                    <GoogleMap lng={loc.location.longitude} lat={loc.location.latitude} />
-                                    : ''}
+                <Grid>
+                    {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert, i) =>
+                        <Row key={i}>
+                            <Col lg={6}>
+                                {/* {concert.sales !== undefined && concert.sales.presales ? concert.sales.presales.map((preSale, f) =>
+                        <h3 key={f}><a href={preSale.url}>{preSale.name}</a></h3>
+                         ) : '' } */}
+                                <h4>{concert.name} | {concert.dates.start.localDate}</h4><br />
+                                {concert.priceRanges ? concert.priceRanges.map((price, j) =>
+                                    <span key={j}>Preisspanne: {price.min}{price.currency} - {price.max}{price.currency}</span>) : ''
+                                } <br />
+                                <div className="wrapper">
+                                    <a href={concert.url} target="_blank">
+                                    <img className="concertImages" src={concert.images[0].url} /></a>
+                                    <span className={"glyphicon glyphicon-heart " + (concert.selected ? 'red' : 'lightgrey')} onClick={this.changeColor.bind(concert, this)}></span>
+                                    </div>
+                                    <br />
+                                    <a href={concert.url}><Button bsStyle="primary">Link zum Konzert</Button></a>
+                                
                             </Col>
-                        )}
+                            {concert._embedded.venues.map((loc, k) =>
+                                <Col className="karteAbstandOben" lg={6} key={k} >
+                                    {loc.location.longitude !== '0' && loc.location.latitude !== '0' ?
+                                        <GoogleMap lng={loc.location.longitude} lat={loc.location.latitude} />
+                                        : ''}
+                                </Col>
+                            )}
 
-                    </Row>
-                ) : <NoTickets></NoTickets>}
+                        </Row>
+                    ) : <NoTickets></NoTickets>}
+                </Grid>
             </div>
         )
     }
