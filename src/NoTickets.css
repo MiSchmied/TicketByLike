@@ -1,0 +1,16 @@
+.centeredText {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.centeredText h1 {
+    font-size: 600% !important;
+}
+
+.centeredText h3 {
+    font-size: 250% !important;
+}
+
+.centeredText img {
+    width: 6.5%;
+}
