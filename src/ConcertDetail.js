@@ -53,7 +53,7 @@ changeColor(concert, that) {
                     {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert, i) =>
                        
                         <Row key={i}>
-                            <Col lg={6}>
+                            <Col lg={6} md={12} >
                                 {/* {concert.sales !== undefined && concert.sales.presales ? concert.sales.presales.map((preSale, f) =>
                         <h3 key={f}><a href={preSale.url}>{preSale.name}</a></h3>
                          ) : '' } */}

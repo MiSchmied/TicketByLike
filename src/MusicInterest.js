@@ -17,7 +17,7 @@ class MusicInterest extends Component {
             <Grid>
                 <Row className="marginTop">
                     {this.props.data.map((music) =>
-                        <Col md={3} lg={2} xs={6}>
+                        <Col lg={2} md={3} sm={6} xs={12}>
                             <div className="artist">
                                 <MusicDetail fbId={music.id} fbName={music.name} authtoken={this.props.authtoken} />
                                 {music.name}
