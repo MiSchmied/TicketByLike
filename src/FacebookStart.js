@@ -19,7 +19,7 @@ class FacebookStart extends Component {
         this.authtoken = localStorage.getItem('fbToken');
     }
 
-    logout(){
+    logout(){   
         this.setState({isLoggedIn: false});
         localStorage.removeItem('fbToken');
     }

@@ -7,6 +7,7 @@ import './ConcertDetail.css';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import ConcertLike from './ConcertLike';
 
 
 class ConcertDetail extends Component {
@@ -31,19 +32,8 @@ class ConcertDetail extends Component {
 
             });
     }
-changeColor(concert, that) {
-    concert.setState({},()=>{
-        concert.render();
-    });
-    console.log('clicked')
 
-    this.selected = !this.selected;
-}
-    
     render() {
-
-        
-
         return (
             <div className="fullBody">
                 <br />
@@ -51,12 +41,9 @@ changeColor(concert, that) {
                 <h2>Konzertdaten für <strong className="biggerName">{this.props.match.params.name}</strong></h2>
                 <Grid>
                     {this.state.data._embedded !== undefined ? this.state.data._embedded.events.map((concert, i) =>
-                       
                         <Row key={i}>
                             <Col lg={6} md={12} >
-                                {/* {concert.sales !== undefined && concert.sales.presales ? concert.sales.presales.map((preSale, f) =>
-                        <h3 key={f}><a href={preSale.url}>{preSale.name}</a></h3>
-                         ) : '' } */}
+                                
                                 <h4>{concert.name}</h4>
                                 <h4>{concert.dates.start.localDate}</h4>
                                 {concert._embedded.venues.map((cities, m) =>
@@ -69,7 +56,7 @@ changeColor(concert, that) {
                                 <div className="wrapper">
                                     <a href={concert.url} target="_blank">
                                     <img className="concertImages" src={concert.images[0].url} /></a>
-                                    <span className={"glyphicon glyphicon-heart " + (concert.selected ? 'red' : 'lightgrey')} onClick={this.changeColor.bind(concert, this)}></span>
+                                    <ConcertLike concertId={concert.id} />
                                     </div>
                                     <br />
                                     <a href={concert.url}><Button bsStyle="primary">Link zum Konzert</Button></a>
@@ -79,7 +66,7 @@ changeColor(concert, that) {
                             
                             {concert._embedded.venues.map((loc, k) =>
                                 <Col className="karteAbstandOben" lg={6} key={k} >
-                                    {loc.location.longitude !== '0' && loc.location.latitude !== '0' ?
+                                    {loc.location != null && loc.location.longitude !== '0' && loc.location.latitude !== '0' ?
                                         <GoogleMap lng={loc.location.longitude} lat={loc.location.latitude} />
                                         : ''}
                                 </Col>
